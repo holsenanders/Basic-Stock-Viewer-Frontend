@@ -1,0 +1,18 @@
+
+.stock-graph-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.stock-graph-container h3 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+
+.stock-graph-container canvas {
+    width: 100% !important;
+    height: auto !important;
+}
