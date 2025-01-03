@@ -73,7 +73,7 @@ const Searchbar = () => {
         try {
             const response = await axios.get(`${BASE_URL}/api/stocks/get_data`, {
                 params: {
-                    symbol: stockTicker,
+                    stock: stockTicker,
                     start: startDate.toISOString().split("T")[0],
                     end: endDate,
                 },
