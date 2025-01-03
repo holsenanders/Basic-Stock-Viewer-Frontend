@@ -26,7 +26,7 @@ const Searchbar = () => {
     const fetchSuggestions = async (searchTerm) => {
         try {
             setLoading(true);
-            const response = await axios.get(`${import.meta.env['VITE_BACKEND_URL']}/api/stocks/search`, {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/stocks/search`, {
                 params: {
                     query: searchTerm,
                 },
@@ -69,7 +69,7 @@ const Searchbar = () => {
         }
 
         try {
-            const response = await axios.get(`${import.meta.env['VITE_BACKEND_URL']}/api/stocks/get_data`, {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/stocks/get_data`, {
                 params: {
                     stock: stockTicker,
                     start: startDate.toISOString().split("T")[0],
