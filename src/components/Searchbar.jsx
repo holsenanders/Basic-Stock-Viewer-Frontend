@@ -16,6 +16,8 @@ const debounce = (func, delay) => {
 };
 
 const Searchbar = () => {
+    const BASE_URL = "https://basicstockviewerbackend-ezf9eka8bzaqdyah.northeurope-01.azurewebsites.net";
+
     const [query, setQuery] = useState("AAPL");
     const [suggestions, setSuggestions] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ const Searchbar = () => {
     const fetchSuggestions = async (searchTerm) => {
         try {
             setLoading(true);
-            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/stocks/search`, {
+            const response = await axios.get(`${BASE_URL}/api/stocks/search`, {
                 params: {
                     query: searchTerm,
                 },
@@ -69,7 +71,7 @@ const Searchbar = () => {
         }
 
         try {
-            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/stocks/get_data`, {
+            const response = await axios.get(`${BASE_URL}/api/stocks/get_data`, {
                 params: {
                     stock: stockTicker,
                     start: startDate.toISOString().split("T")[0],
